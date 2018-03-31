@@ -1,2 +1,2 @@
-# reactJS-TMDb-app
-## By Rashmi AP
+TMDB App
+Made with love in React
