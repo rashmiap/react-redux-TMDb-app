@@ -1,5 +1,4 @@
 # reactJS-redux-TMDb-app
--
 
 Made with :heart: in React
 
