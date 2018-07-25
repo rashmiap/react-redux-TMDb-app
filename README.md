@@ -1,4 +1,6 @@
-# TMDB App
+# reactJS-redux-TMDb-app
+-
+
 Made with :heart: in React
 
 ### Get Started Immediately
@@ -44,3 +46,4 @@ The build is minified and the filenames include the hashes.<br>
 By default
 
 Your app is ready to be deployed.
+=======
