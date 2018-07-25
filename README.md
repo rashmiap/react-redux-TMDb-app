@@ -1,1 +1,1 @@
-# reactJS-TMDb-app
+# reactJS-redux-TMDb-app
