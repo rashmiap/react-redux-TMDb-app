@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "history": "^4.7.2",
     "material-ui": "^1.0.0-beta.39",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
@@ -10,6 +11,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-native": "^4.3.0",
+    "react-router-redux": "^4.0.8",
     "react-scripts": "1.1.1",
     "redux": "^4.0.0"
   },
