@@ -1,15 +1,12 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import MovieList from './MovieList';
-import MovieDetail from './MovieDetail';
+import '../Css/App.css';
+import Movie from './Movie';
+import { Link } from 'react-router-dom';
 
 const Main = () => (
-  <main>
-    <Switch>
-      <Route exact path='/' component={MovieList}/>
-      <Route path='/view/:postId' component={MovieDetail}/>
-    </Switch>
-  </main>
+  <section>
+    <Link to="/">tmdb</Link>
+    <Movie />
+  </section>
 )
-
-export default Main
+export default Main;
