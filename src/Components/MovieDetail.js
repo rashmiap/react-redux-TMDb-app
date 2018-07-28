@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 export default class MovieDetail extends Component {
   render(){
     return(
-      <p>details</p>
+      <div>
+        <p>details</p>
+        <pre>
+          {JSON.stringify(this.props.comments,null,'')}
+        </pre>
+      </div>
     )
   }
 }
