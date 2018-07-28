@@ -3,10 +3,10 @@ import '../Css/App.css';
 import Movie from './Movie';
 import { Link } from 'react-router-dom';
 
-const Main = () => (
+const Main = (props) => (
   <section>
     <Link to="/">tmdb</Link>
-    <Movie />
+    <Movie {...props}/>
   </section>
 )
 export default Main;
