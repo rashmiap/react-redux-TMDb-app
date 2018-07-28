@@ -1,4 +1,25 @@
 const posts = {
-
+  "abc": [
+    {
+      "id": 0,
+      "name": "Adam Carter",
+      "work": "Unilogic",
+      "email": "adam.carter@unilogic.com",
+      "dob": "1978",
+      "address": "83 Warner Street",
+      "city": "Boston",
+      "optedin": true
+    },
+    {
+      "id": 1,
+      "name": "Leanne Brier",
+      "work": "Connic",
+      "email": "leanne.brier@connic.org",
+      "dob": "13/05/1987",
+      "address": "9 Coleman Avenue",
+      "city": "Toronto",
+      "optedin": false
+    }
+  ]
 }
 export default posts;
