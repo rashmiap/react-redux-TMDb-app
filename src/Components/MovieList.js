@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
 export default class MovieList extends Component {
+  constructor(props){
+    super(props);
+  }
   render(){
     return(
       <div>
-      <p>list</p>
-      <p>list</p>
-
-      <p>show</p>
-
-      <p>list</p>
-
+        <p>Movie listing</p>
+        <pre>
+          {JSON.stringify(this.props.posts,null,'')}
+        </pre>
       </div>
     )
   }
