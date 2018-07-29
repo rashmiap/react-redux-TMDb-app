@@ -5,9 +5,6 @@ export default class MovieDetail extends Component {
     return(
       <div>
         <p>details</p>
-        <pre>
-          {JSON.stringify(this.props.comments,null,'')}
-        </pre>
       </div>
     )
   }
