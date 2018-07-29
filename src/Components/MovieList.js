@@ -8,9 +8,6 @@ export default class MovieList extends Component {
     return(
       <div>
         <p>Movie listing</p>
-        <pre>
-          {JSON.stringify(this.props.posts,null,'')}
-        </pre>
       </div>
     )
   }
