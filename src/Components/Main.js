@@ -1,12 +1,16 @@
 import React from 'react';
 import '../Css/App.css';
 import Movie from './Movie';
-import { Link } from 'react-router-dom';
+import Header from './Header';
+import Navigation from './Navigation';
 
 const Main = (props) => (
-  <section>
-    <Link to="/">tmdb</Link>
-    <Movie {...props}/>
+  <section className="Main">
+    <Header />
+    <div className="Main-content">
+      <Navigation />
+      <Movie {...props}/>
+    </div>
   </section>
 )
 export default Main;
