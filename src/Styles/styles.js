@@ -3,7 +3,7 @@ export const headerStyles = {
     flexGrow: 1,
   },
   logo: {
-    maxWidth: '85px',
+    width: '140px',
   },
   appBar: {
     backgroundColor: '#000'
