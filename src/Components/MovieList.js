@@ -9,7 +9,7 @@ export default class MovieList extends Component {
     let renderBlocks = [];
     renderBlocks = this.props.posts.map((key, index) => {
       return (
-        <MovieTile key={index} />
+        <MovieTile key={index} {...this.props} posts={this.props.posts} i={index}/>
       );
     })
     return renderBlocks;
