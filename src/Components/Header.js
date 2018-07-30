@@ -18,12 +18,11 @@ class Header extends Component{
     const { classes } = this.props;
     return(
       <div className={classes.root}>
-        <AppBar position="static" className={classes.appBar}>
+        <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <Link to="/">
               <img src={logo} className={classes.logo}/>
             </Link>
-            <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
       </div>

@@ -4,7 +4,7 @@ import MovieList from './MovieList';
 import MovieDetail from './MovieDetail';
 
 const Movie = (props) => {
-  return <main>
+  return <main className="Movie-content">
     <Switch>
       <Route exact path='/' render={(listProps) => <MovieList {...listProps} posts={props.posts}/>} />
       <Route path='/view/:postId' render={(detailProps) => <MovieDetail {...detailProps} comments={props.comments}/>} />

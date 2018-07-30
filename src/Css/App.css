@@ -4,6 +4,7 @@
 .Main-content{
   display: flex;
   align-items: flex-start;
+  margin-top: 64px;
 }
 .Nav{
   width: 200px;
@@ -11,4 +12,26 @@
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+.Nav-active{
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.Nav a{
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #000;
+}
+.Nav a:hover{
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.Movie-content{
+  flex:1;
+  padding: 20px;
+}
+.movie-listing__blocks{
+  display: flex;
+  flex-wrap: wrap;
 }

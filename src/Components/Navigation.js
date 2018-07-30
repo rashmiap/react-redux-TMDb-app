@@ -10,8 +10,8 @@ class Navigation extends Component{
   render(){
     return(
       <nav className="Nav">
-        <NavLink activeStyle={{color: 'red'}} exact to="/">Movies</NavLink>
-        <NavLink activeStyle={{color: 'red'}} to="/view/12">Test</NavLink>
+        <NavLink activeClassName="Nav-active" exact to="/">Movies</NavLink>
+        <NavLink activeClassName="Nav-active" to="/view/12">Test</NavLink>
       </nav>
     )
   }
