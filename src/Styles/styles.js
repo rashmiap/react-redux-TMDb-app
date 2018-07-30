@@ -3,7 +3,7 @@ export const headerStyles = {
     flexGrow: 1,
   },
   logo: {
-    width: '140px',
+    width: '120px',
   },
   appBar: {
     backgroundColor: '#000'
@@ -18,6 +18,9 @@ export const cardTileStyles = {
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '83.25%', // 16:9
   },
+  actions: {
+    justifyContent: 'space-between',
+  }
 }
