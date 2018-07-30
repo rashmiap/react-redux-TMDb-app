@@ -11,7 +11,6 @@
   height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
 .Nav-active{
   background-color: rgba(0, 0, 0, 0.08);
@@ -30,6 +29,8 @@
 .Movie-content{
   flex:1;
   padding: 20px;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+
 }
 .movie-listing__blocks{
   display: flex;

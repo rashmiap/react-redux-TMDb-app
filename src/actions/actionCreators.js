@@ -22,3 +22,10 @@ export function removeComment(postId, i){
     i
   }
 }
+//save a movie card
+export function saveCard(index){
+  return{
+    type: 'SAVE_CARD',
+    index: index
+  }
+}
