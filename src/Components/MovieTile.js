@@ -17,20 +17,19 @@ const MovieTile = (props) => {
   return <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={lizardlogo}
-          title="Contemplative Reptile"
+          image={`https://image.tmdb.org/t/p/w300/${movies[i].poster_path}`}
+          title={movies[i].original_title ? movies[i].original_title : movies[i].original_name}
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
-            Lizard
+            {movies[i].original_title ? movies[i].original_title : movies[i].original_name}
           </Typography>
           <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {movies[i].overview}
           </Typography>
         </CardContent>
         <CardActions className={classes.actions}>
-          <Link to={`/view/${movies[i].code}`}>
+          <Link to={`/view/${movies[i].id}`}>
             See More
           </Link>
           {
