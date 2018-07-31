@@ -13,7 +13,7 @@ import lizardlogo from '../Assets/cici.jpg';
 import { cardTileStyles } from '../Styles/styles';
 
 const MovieTile = (props) => {
-  const { classes, posts, i } = props;
+  const { classes, movies, i } = props;
   return <Card className={classes.card}>
         <CardMedia
           className={classes.media}
@@ -30,14 +30,24 @@ const MovieTile = (props) => {
           </Typography>
         </CardContent>
         <CardActions className={classes.actions}>
-          <Link to={`/view/${posts[i].code}`}>
+          <Link to={`/view/${movies[i].code}`}>
             See More
           </Link>
-          <Button aria-label="Save" className={classes.button} onClick={props.saveCard.bind(null, i)}>
-            <Icon className={classes.icon} color="action">
-                favorite_border
-            </Icon>
-          </Button>
+          {
+            props.movies[i].saved == true ?
+            <Button aria-label="Saved" className={classes.button} onClick={props.toggleSaveCard.bind(null, i)}>
+              <Icon className={classes.icon} color="action">
+                  favorite
+              </Icon>
+            </Button>
+            :
+            <Button aria-label="Save" className={classes.button} onClick={props.toggleSaveCard.bind(null, i)}>
+              <Icon className={classes.icon} color="action">
+                  favorite_border
+              </Icon>
+            </Button>
+          }
+
         </CardActions>
       </Card>
 }
