@@ -10,8 +10,8 @@ class Navigation extends Component{
   render(){
     return(
       <nav className="Nav">
-        <NavLink activeClassName="Nav-active" exact to="/">Movies</NavLink>
-        <NavLink activeClassName="Nav-active" to="/view/12">Test</NavLink>
+        <NavLink activeClassName="Nav-active" exact to="/">Latest Movies</NavLink>
+        <NavLink activeClassName="Nav-active" to="/shows">TV Shows</NavLink>
       </nav>
     )
   }
