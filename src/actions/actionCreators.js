@@ -22,10 +22,11 @@ export function removeComment(postId, i){
     i
   }
 }
-//save a movie card
-export function saveCard(index){
+
+//save and unsave favorite movie card
+export function toggleSaveCard(index){
   return{
-    type: 'SAVE_CARD',
-    index: index
+    type: 'TOGGLE_SAVE',
+    index,
   }
 }
