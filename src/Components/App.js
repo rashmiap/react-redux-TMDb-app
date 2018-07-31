@@ -8,7 +8,6 @@ function mapStateToProps(state){
   return{
     movies: state.movies,
     shows: state.shows,
-    comments: state.comments,
   }
 }
 function mapDispatchToProps(dispatch){
