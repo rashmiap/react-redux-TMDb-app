@@ -21,10 +21,10 @@ const MovieTile = (props) => {
           title={movies[i].original_title ? movies[i].original_title : movies[i].original_name}
         />
         <CardContent>
-          <Typography gutterBottom variant="headline" component="h2">
+          <Typography gutterBottom variant="headline" component="h2" className={classes.title}>
             {movies[i].original_title ? movies[i].original_title : movies[i].original_name}
           </Typography>
-          <Typography component="p">
+          <Typography component="p" className={classes.overview}>
             {movies[i].overview}
           </Typography>
         </CardContent>

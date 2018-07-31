@@ -22,5 +22,17 @@ export const cardTileStyles = {
   },
   actions: {
     justifyContent: 'space-between',
+  },
+  title: {
+    minHeight: 64,
+    maxHeight: 64,
+    overflow: 'hidden',
+  },
+  overview: {
+    WebkitBoxOrient: 'vertical',
+    maxHeight: 64,
+    overflow: 'hidden',
+    display: '-webkit-box',
+    WebkitLineClamp: 3,
   }
 }

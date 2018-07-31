@@ -5,23 +5,6 @@ export function increment(index){
     index: index
   }
 }
-//add comment
-export function addComment(postId, author, comment){
-  return{
-    type: 'ADD_COMMENT',
-    postId,
-    author,
-    comment
-  }
-}
-
-//delete comment
-export function removeComment(postId, i){
-  return{
-    type: 'REMOVE_COMMENT',
-    i
-  }
-}
 
 //save and unsave favorite movie card
 export function toggleSaveCard(index){
