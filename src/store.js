@@ -5,11 +5,11 @@ import { syncHistoryWithStore } from 'react-router-redux';
 //import the root reducers
 import rootReducer  from './reducers/index';
 import comments from './data/comments';
-import posts from './data/posts';
+import movies from './data/movies';
 
 //create an object for default data
 const defaultState = {
-  posts,
+  movies,
   comments
 }
 
