@@ -1,4 +1,4 @@
-import { createStore, compose } from 'redux';
+import { createStore } from 'redux';
 import { createBrowserHistory } from 'history';
 import { syncHistoryWithStore } from 'react-router-redux';
 
@@ -12,10 +12,7 @@ const defaultState = {
   movies,
   shows,
 }
-
 const store = createStore(rootReducer, defaultState);
-
-//export const history = syncHistoryWithStore(createBrowserHistory, store);
 export const history = syncHistoryWithStore(createBrowserHistory(), store);
 
 export default store;

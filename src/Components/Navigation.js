@@ -1,6 +1,5 @@
 import React,{ Component } from 'react';
-import PropTypes from 'prop-types';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import showNav from '../Assets/show-nav.svg';
 import movieNav from '../Assets/movie-nav.svg';
