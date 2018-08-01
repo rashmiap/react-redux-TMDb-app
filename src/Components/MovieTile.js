@@ -9,7 +9,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography';
-import lizardlogo from '../Assets/cici.jpg';
 import { cardTileStyles } from '../Styles/styles';
 
 const MovieTile = (props) => {
@@ -33,7 +32,7 @@ const MovieTile = (props) => {
             See More
           </Link>
           {
-            props.movies[i].saved == true ?
+            props.movies[i].saved ?
             <Button aria-label="Saved" className={classes.button} onClick={props.toggleSaveCard.bind(null, i)}>
               <Icon className={classes.icon} color="action">
                   favorite

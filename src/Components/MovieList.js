@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import MovieTile from './MovieTile';
 
 export default class MovieList extends Component {
-  constructor(props){
-    super(props);
-
-  }
   componentDidMount () {
-    console.log(this.props.match);
-
+    const apiUrl = 'https://api.themoviedb.org/3/discover/movie?api_key=28967d69513d49d94603253876b995a8&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1';
+    //this.props.fetchData(apiUrl);
   }
   __renderTiles(){
     let renderBlocks = [];
