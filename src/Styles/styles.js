@@ -36,8 +36,4 @@ export const cardTileStyles = {
     display: '-webkit-box',
     WebkitLineClamp: 3,
   },
-  linker: {
-    color: 'black',
-    textDecoration: 'none',
-  }
 }
