@@ -4,6 +4,11 @@ import MovieTile from './MovieTile';
 export default class MovieList extends Component {
   constructor(props){
     super(props);
+
+  }
+  componentDidMount () {
+    console.log(this.props.match);
+
   }
   __renderTiles(){
     let renderBlocks = [];
@@ -17,7 +22,7 @@ export default class MovieList extends Component {
   render(){
     return(
       <div className="movie-listing">
-        <p>Movie listing</p>
+        <p>Discover the latest Movies</p>
         <div className="movie-listing__blocks">
           {this.__renderTiles()}
         </div>
