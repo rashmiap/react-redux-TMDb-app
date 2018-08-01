@@ -17,7 +17,7 @@ export default class ShowList extends Component {
   render(){
     return(
       <div className="movie-listing">
-        <p>TV Shows listing</p>
+        <p>Discover the latest TV Shows</p>
         <div className="movie-listing__blocks">
           {this.__renderTiles()}
         </div>

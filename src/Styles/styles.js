@@ -6,7 +6,8 @@ export const headerStyles = {
     width: '120px',
   },
   appBar: {
-    backgroundColor: '#000'
+    backgroundColor: '#000',
+    padding: '10px 0',
   }
 };
 
@@ -34,5 +35,9 @@ export const cardTileStyles = {
     overflow: 'hidden',
     display: '-webkit-box',
     WebkitLineClamp: 3,
+  },
+  linker: {
+    color: 'black',
+    textDecoration: 'none',
   }
 }
