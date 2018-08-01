@@ -13,7 +13,7 @@ export default class MovieDetail extends Component {
     return(
       <div className="details">
       <h1>{postId}</h1>
-      <MovieTile movies = {movies} {...this.props} i={index} key={index} />
+      <MovieTile movies={movies} {...this.props} i={index} key={index} />
       </div>
     )
   }
