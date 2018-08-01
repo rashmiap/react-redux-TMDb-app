@@ -29,7 +29,7 @@ const MovieTile = (props) => {
           </Typography>
         </CardContent>
         <CardActions className={classes.actions}>
-          <Link to={`/view/${movies[i].id}`}>
+          <Link to={`/view/${movies[i].id}`} className={classes.linker}>
             See More
           </Link>
           {
