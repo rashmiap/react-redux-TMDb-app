@@ -4,10 +4,11 @@ import { withRouter } from 'react-router';
 import * as actionCreators from '../actions/actionCreators';
 import Main from './Main';
 
-function mapStateToProps(state){
-  return{
-    movies: state.movies,
-    shows: state.shows,
+const mapStateToProps = (state, ownProps) => {
+  return {
+    movies: (state.movies),
+    shows: (state.shows),
+    ownProps
   }
 }
 function mapDispatchToProps(dispatch){
