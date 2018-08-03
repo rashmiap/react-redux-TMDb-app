@@ -30,7 +30,6 @@
   flex:1;
   padding: 20px;
   border-left: 1px solid rgba(0, 0, 0, 0.12);
-
 }
 .movie-listing__blocks{
   display: flex;
@@ -42,4 +41,10 @@
   justify-content: center;
   min-height: 80vh;
   flex-direction: column;
+}
+.movie-listing__error{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
 }
