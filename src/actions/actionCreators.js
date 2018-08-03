@@ -22,23 +22,23 @@ export function fetchIsLoading(bool) {
 export function fetchDataSuccess(item) {
   return {
     type: 'FETCH_DATA_SUCCESS',
-    item
+    responseItem: item
   };
 }
-// 
-// export function fetchData(url) {
-//   return (dispatch) => {
-//     dispatch(fetchIsLoading(true));
-//     fetch(url)
-//       .then((response) => {
-//         if(!response.ok) {
-//           throw Error(response.statusText);
-//         }
-//         dispatch(fetchIsLoading(false));
-//         return response;
-//       })
-//       .then((response) => response.json())
-//       .then((item) => dispatch(fetchDataSuccess(item)))
-//       .catch(() => dispatch(fetchDataErrored(true)));
-//   }
-// }
+
+export function fetchData(url) {
+  return (dispatch) => {
+    dispatch(fetchIsLoading(true));
+    fetch(url)
+      .then((response) => {
+        if(!response.ok) {
+          throw Error(response.statusText);
+        }
+        dispatch(fetchIsLoading(false));
+        return response;
+      })
+      .then((response) => response.json())
+      .then((item) => dispatch(fetchDataSuccess(item)))
+      .catch(() => dispatch(fetchDataErrored(true)));
+  }
+}
