@@ -20,12 +20,32 @@ export default class MovieList extends Component {
     })
     return renderBlocks;
   }
+  __renderTile(){
+    let renderBlock = [];
+
+    renderBlock = this.props.responseItem.results !== undefined ?
+     this.props.responseItem.results.map((k, i) => {
+       return (
+         <MovieTile key={i} {...this.props} movies={this.props.responseItem.results} i={i}/>
+       );
+     })
+     : [];
+    return renderBlock;
+  }
   render(){
+    if (this.props.hasErrored) {
+      return <p>Sorry! There was an error loading the items</p>;
+    }
+
+    if (this.props.isLoading) {
+      return <p>Loading ...</p>;
+    }
+
     return(
       <div className="movie-listing">
         <p>{ this.props.movieType ? `Discover the latest Movies` : `Discover the latest TV Shows`}</p>
         <div className="movie-listing__blocks">
-          {this.__renderTiles()}
+            {this.__renderTile()}
         </div>
       </div>
     )
