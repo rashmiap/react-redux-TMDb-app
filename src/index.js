@@ -7,11 +7,20 @@ import App from './Components/App';
 // import react-router deps
 import { BrowserRouter, Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store, { history } from './store';
+//import store, { history } from './store';
+import configureStore from './store';
+import movies from './data/movies';
+import shows from './data/shows';
+
+const defaultState = {
+  movies,
+  shows
+}
+const store = configureStore(defaultState);
 
 const router = (
   <Provider store={store}>
-    <BrowserRouter history={history}>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </Provider>
