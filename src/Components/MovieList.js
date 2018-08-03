@@ -13,22 +13,20 @@ export default class MovieList extends Component {
   componentDidMount () {
     this.props.movieType ? this.props.fetchData(movieApiUrl): this.props.fetchData(showsApiUrl);
   }
+  shouldComponentUpdate(nextProps, nextState){
+    if(nextProps.location.pathname != this.props.location.pathname){
+      nextProps.movieType ? this.props.fetchData(movieApiUrl): this.props.fetchData(showsApiUrl)
+      return true;
+    }
+    return true;
+  }
 
   __renderTiles(){
-    let renderBlocks = [];
-    renderBlocks = this.props.movies.map((key, index) => {
-      return (
-        <MovieTile key={index} {...this.props} movies={this.props.movies} i={index}/>
-      );
-    })
-    return renderBlocks;
-  }
-  __renderTile(){
     let renderBlock = [];
     renderBlock = this.props.responseItem.results !== undefined ?
-     this.props.responseItem.results.map((k, i) => {
+     this.props.responseItem.results.map((key, index) => {
        return (
-         <MovieTile key={i} {...this.props} movies={this.props.responseItem.results} i={i}/>
+         <MovieTile key={index} {...this.props} movies={this.props.responseItem.results} i={index}/>
        );
      })
      : [];
@@ -51,7 +49,7 @@ export default class MovieList extends Component {
       <div className="movie-listing">
         <p>{ this.props.movieType ? `Discover the latest Movies` : `Discover the latest TV Shows`}</p>
         <div className="movie-listing__blocks">
-            {this.__renderTile()}
+            {this.__renderTiles()}
         </div>
       </div>
     )
