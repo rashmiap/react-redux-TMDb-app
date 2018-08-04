@@ -45,7 +45,6 @@ const MovieTile = (props) => {
               </Icon>
             </Button>
           }
-
         </CardActions>
       </Card>
 }
