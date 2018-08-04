@@ -1,15 +1,14 @@
 //creating root reducers
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import { fetchSuccess, fetchIsLoading, fetchErrored, movies } from './movies';
-import shows from './shows';
+import { fetchSuccess, fetchIsLoading, fetchErrored, movies, toggleSaveCard } from './movies';
 
 const rootReducer = combineReducers({
   movies,
   fetchErrored,
   fetchIsLoading,
   fetchSuccess,
-  shows,
+  toggleSaveCard,
   routing : routerReducer });
 
 export default rootReducer;

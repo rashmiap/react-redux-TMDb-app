@@ -22,7 +22,7 @@ export function fetchIsLoading(bool) {
 export function fetchDataSuccess(item) {
   return {
     type: 'FETCH_DATA_SUCCESS',
-    responseItem: item
+    responseItem: item,
   };
 }
 
