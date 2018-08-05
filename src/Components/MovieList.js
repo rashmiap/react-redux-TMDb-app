@@ -26,7 +26,7 @@ export default class MovieList extends Component {
     renderBlock = this.props.responseItem.results !== undefined ?
      this.props.responseItem.results.map((key, index) => {
        return (
-         <MovieTile key={index} {...this.props} movies={this.props.responseItem.results} i={index}/>
+         <MovieTile key={index} {...this.props} movies={this.props.responseItem.results} i={index} movieType={this.props.movieType}/>
        );
      })
      : [];

@@ -59,6 +59,18 @@ export function fetchSuccess(state = [], action) {
     return state;
   }
 }
+export function fetchDetailsSuccess(state = [], action) {
+  switch (action.type) {
+    case 'FETCH_DETAILS_SUCCESS':{
+      console.log(action.fullDetails);
+      return {
+        ...action.fullDetails
+      }
+  }
+  default:
+    return state;
+  }
+}
 export function toggleSaveCard(state = [], action) {
   switch (action.type) {
     case 'TOGGLE_SAVE':{
@@ -79,5 +91,35 @@ export function toggleSaveCard(state = [], action) {
     default:{
       return state;
     }
+  }
+}
+
+export function fetchCastDataErrored(state = false, action) {
+  switch (action.type) {
+    case 'FETCH_CAST_ERRORED':
+      return action.hasErrored;
+    default:
+      return state;
+  }
+}
+
+export function fetchCastIsLoading(state = false, action) {
+  switch (action.type) {
+    case 'FETCH_CAST_LOADING':
+      return action.isCastLoading;
+    default:
+      return state;
+  }
+}
+
+export function fetchCastSuccess(state = [], action) {
+  switch (action.type) {
+    case 'FETCH_CAST_SUCCESS':{
+      return {
+        ...action.castDetails
+      }
+  }
+  default:
+    return state;
   }
 }
