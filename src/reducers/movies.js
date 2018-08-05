@@ -97,7 +97,7 @@ export function toggleSaveCard(state = [], action) {
 export function fetchCastDataErrored(state = false, action) {
   switch (action.type) {
     case 'FETCH_CAST_ERRORED':
-      return action.hasErrored;
+      return action.hasCastErrored;
     default:
       return state;
   }
