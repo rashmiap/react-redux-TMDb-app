@@ -9,6 +9,10 @@ const mapStateToProps = (state) => {
     responseItem: state.fetchSuccess,
     hasErrored: state.fetchErrored,
     isLoading: state.fetchIsLoading,
+    fullDetails: state.fetchDetailsSuccess,
+    isCastLoading: state.fetchCastIsLoading,
+    hasCastErrored: state.fetchCastDataErrored,
+    castDetails: state.fetchCastSuccess,
   };
 };
 const mapDispatchToProps = (dispatch) => {
