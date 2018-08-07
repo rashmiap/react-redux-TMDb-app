@@ -51,7 +51,7 @@ export function fetchSuccess(state = [], action) {
       return {
       ...action.responseItem,
       results: action.responseItem.results.map(
-        (content, i) => i != 1 ? {...content, saved: false}: {...content, saved: false}
+        item => Object.assign({}, item, { saved: false })
       )
     }
   }
