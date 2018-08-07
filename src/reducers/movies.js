@@ -1,27 +1,12 @@
 //a reducer takes in 2 things
 // 1. action (info about what happened)
 // 2. copy of current state
-const initialState = [];
-
 export function movies(state = [], action){
   switch(action.type){
-    case 'TOGGLE_SAVEd': {
+    case 'TOGGLE_SAVE':
       console.log('toggle save card');
-      console.log(action.id);
-      console.log(state);
-      const index = action.index;
-      return state.map(movies => {
-        console.log(movies);
-
-        if(movies.id !== action.index){
-          return movies;
-        }
-        return {
-          ...movies,
-          saved: !movies.saved
-        }
-      })
-    }
+      console.log(state,action);
+      return state;
     default:
       return state;
   }
@@ -51,7 +36,7 @@ export function fetchSuccess(state = [], action) {
       return {
       ...action.responseItem,
       results: action.responseItem.results.map(
-        (content, i) => i != 1 ? {...content, saved: false}: {...content, saved: false}
+        item => Object.assign({}, item, { saved: false })
       )
     }
   }
@@ -69,28 +54,6 @@ export function fetchDetailsSuccess(state = [], action) {
   }
   default:
     return state;
-  }
-}
-export function toggleSaveCard(state = [], action) {
-  switch (action.type) {
-    case 'TOGGLE_SAVE':{
-      console.log(action.index);
-      return [
-        ...state,{
-          saved : !action.saved,
-        }
-      ]
-   }
-      // return {
-      //   ...action.responseItem,
-      //   results: action.responseItem.results.map(
-      //     (content, i) => i != 1 ? {...content, saved: true}: {...content, saved: true}
-      //   )
-      // }
-
-    default:{
-      return state;
-    }
   }
 }
 

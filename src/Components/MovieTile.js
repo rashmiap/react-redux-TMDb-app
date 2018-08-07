@@ -33,13 +33,13 @@ const MovieTile = (props) => {
           </Button>
           {
             props.movies[i].saved ?
-            <Button aria-label="Saved" className={classes.button} onClick={props.toggleSaveCard.bind(null, i)}>
+            <Button aria-label="Saved" className={classes.button} onClick={props.toggleSaveCard.bind(null,props.movies[i].id)}>
               <Icon className={classes.icon} color="action">
                   favorite
               </Icon>
             </Button>
             :
-            <Button aria-label="Save" className={classes.button} onClick={props.toggleSaveCard.bind(null, i)}>
+            <Button aria-label="Save" className={classes.button} onClick={props.toggleSaveCard.bind(null,props.movies[i].id)}>
               <Icon className={classes.icon} color="action">
                   favorite_border
               </Icon>
