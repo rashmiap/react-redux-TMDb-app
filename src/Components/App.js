@@ -6,13 +6,13 @@ import Main from './Main';
 
 const mapStateToProps = (state) => {
   return {
-    responseItem: state.fetchSuccess,
-    hasErrored: state.fetchErrored,
-    isLoading: state.fetchIsLoading,
-    fullDetails: state.fetchDetailsSuccess,
-    isCastLoading: state.fetchCastIsLoading,
-    hasCastErrored: state.fetchCastDataErrored,
-    castDetails: state.fetchCastSuccess,
+    responseItem: state.responseItem,
+    hasErrored: state.hasErrored,
+    isLoading: state.isLoading,
+    fullDetails: state.fullDetails,
+    isCastLoading: state.isCastLoading,
+    hasCastErrored: state.hasCastErrored,
+    castDetails: state.castDetails,
   };
 };
 const mapDispatchToProps = (dispatch) => {
