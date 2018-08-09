@@ -28,20 +28,20 @@ const MovieTile = (props) => {
           </Typography>
         </CardContent>
           {
-            movieType ?
+            movieType == 'movies' ?
             <CardActions className={classes.actions}>
               <Button component={Link} to={`/view/${movies[i].id}`} className={classes.linker} color="primary">
                 See More
               </Button>
               {props.movies[i].saved ?
-              <Button aria-label="Saved" className={classes.button} onClick={props.toggleSaveCard.bind(null,i)}>
-                <Icon className={classes.icon} color="action">
+              <Button aria-label="Saved" className={classes.button} onClick={props.toggleSaveCard.bind(null,i)} >
+                <Icon className={classes.icon} style={cardTileStyles.saveIcon}>
                     favorite
                 </Icon>
               </Button>
               :
               <Button aria-label="Save" className={classes.button} onClick={props.toggleSaveCard.bind(null,i)}>
-                <Icon className={classes.icon} color="action">
+                <Icon className={classes.icon} style={cardTileStyles.saveIcon}>
                     favorite_border
                 </Icon>
               </Button>}
@@ -49,17 +49,17 @@ const MovieTile = (props) => {
             :
             <CardActions className={classes.actions}>
               <Button component={Link} to={`/show/${movies[i].id}`} className={classes.linker} color="primary">
-                See More tv
+                See More 
               </Button>
                 {props.movies[i].saved ?
                 <Button aria-label="Saved" className={classes.button} onClick={props.toggleShowCard.bind(null,i)}>
-                  <Icon className={classes.icon} color="action">
+                  <Icon className={classes.icon} style={cardTileStyles.saveIcon}>
                       favorite
                   </Icon>
                 </Button>
                 :
                 <Button aria-label="Save" className={classes.button} onClick={props.toggleShowCard.bind(null,i)}>
-                  <Icon className={classes.icon} color="action">
+                  <Icon className={classes.icon} style={cardTileStyles.saveIcon}>
                       favorite_border
                   </Icon>
                 </Button>}
