@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import showNav from '../Assets/show-nav.svg';
 import movieNav from '../Assets/movie-nav.svg';
+import savedNav from '../Assets/saved-nav.svg';
 
 const Navigation = (props) => {
   return(
@@ -14,6 +15,10 @@ const Navigation = (props) => {
       <NavLink activeClassName="Nav-active" to="/shows">
         <img src={showNav} width={35} style={{marginRight: '20px'}}/>
         TV Shows
+      </NavLink>
+      <NavLink activeClassName="Nav-active" to="/saved">
+        <img src={savedNav} width={35} style={{marginRight: '8px'}}/>
+        Saved Cards
       </NavLink>
     </nav>
   )
