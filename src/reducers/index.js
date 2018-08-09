@@ -1,5 +1,5 @@
 //creating root reducers
-import { combineReducers, reduceReducers } from 'redux';
+import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import { responseItem } from './responseItem';
 import { isLoading } from './isLoading';
