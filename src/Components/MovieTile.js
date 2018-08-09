@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import { cardTileStyles } from '../Styles/styles';
 
 const MovieTile = (props) => {
-  const { classes, movies, i } = props;
+  const { classes, movies, i, movieType } = props;
   return <Card className={classes.card}>
         <CardMedia
           className={classes.media}
@@ -27,25 +27,44 @@ const MovieTile = (props) => {
             {movies[i].overview}
           </Typography>
         </CardContent>
-        <CardActions className={classes.actions}>
-          <Button component={Link} to={`/view/${movies[i].id}`} className={classes.linker} color="primary">
-            See More
-          </Button>
           {
-            props.movies[i].saved ?
-            <Button aria-label="Saved" className={classes.button} onClick={props.toggleSaveCard.bind(null,i)}>
-              <Icon className={classes.icon} color="action">
-                  favorite
-              </Icon>
-            </Button>
+            movieType ?
+            <CardActions className={classes.actions}>
+              <Button component={Link} to={`/view/${movies[i].id}`} className={classes.linker} color="primary">
+                See More
+              </Button>
+              {props.movies[i].saved ?
+              <Button aria-label="Saved" className={classes.button} onClick={props.toggleSaveCard.bind(null,i)}>
+                <Icon className={classes.icon} color="action">
+                    favorite
+                </Icon>
+              </Button>
+              :
+              <Button aria-label="Save" className={classes.button} onClick={props.toggleSaveCard.bind(null,i)}>
+                <Icon className={classes.icon} color="action">
+                    favorite_border
+                </Icon>
+              </Button>}
+            </CardActions>
             :
-            <Button aria-label="Save" className={classes.button} onClick={props.toggleSaveCard.bind(null,i)}>
-              <Icon className={classes.icon} color="action">
-                  favorite_border
-              </Icon>
-            </Button>
+            <CardActions className={classes.actions}>
+              <Button component={Link} to={`/show/${movies[i].id}`} className={classes.linker} color="primary">
+                See More tv
+              </Button>
+                {props.movies[i].saved ?
+                <Button aria-label="Saved" className={classes.button} onClick={props.toggleShowCard.bind(null,i)}>
+                  <Icon className={classes.icon} color="action">
+                      favorite
+                  </Icon>
+                </Button>
+                :
+                <Button aria-label="Save" className={classes.button} onClick={props.toggleShowCard.bind(null,i)}>
+                  <Icon className={classes.icon} color="action">
+                      favorite_border
+                  </Icon>
+                </Button>}
+            </CardActions>
           }
-        </CardActions>
       </Card>
 }
 MovieTile.propTypes = {

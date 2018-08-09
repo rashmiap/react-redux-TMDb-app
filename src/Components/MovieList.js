@@ -9,13 +9,16 @@ const showsApiUrl = 'https://api.themoviedb.org/3/discover/tv?api_key=28967d6951
 export default class MovieList extends Component {
   constructor(props){
     super(props);
+    console.log(this.props.movieType);
   }
   componentDidMount () {
-    this.props.movieType ? this.props.fetchData(movieApiUrl): this.props.fetchData(showsApiUrl);
+    this.props.movieType ? this.props.fetchData(movieApiUrl,'movie'):
+     this.props.fetchData(showsApiUrl,'show');
   }
   shouldComponentUpdate(nextProps, nextState){
     if(nextProps.location.pathname != this.props.location.pathname){
-      nextProps.movieType ? this.props.fetchData(movieApiUrl): this.props.fetchData(showsApiUrl)
+      nextProps.movieType ? this.props.fetchData(movieApiUrl,'movie'):
+      this.props.fetchData(showsApiUrl,'show')
       return true;
     }
     return true;
@@ -23,14 +26,25 @@ export default class MovieList extends Component {
 
   __renderTiles(){
     let renderBlock = [];
-    renderBlock = this.props.responseItem.results !== undefined ?
-     this.props.responseItem.results.map((key, index) => {
+    renderBlock = this.props.movies.results !== undefined ?
+     this.props.movies.results.map((key, index) => {
        return (
-         <MovieTile key={index} {...this.props} movies={this.props.responseItem.results} i={index} movieType={this.props.movieType}/>
+         <MovieTile key={index} {...this.props} movies={this.props.movies.results} i={index} movieType={this.props.movieType}/>
        );
      })
      : [];
     return renderBlock;
+  }
+  __renderShows(){
+    let renderShows = [];
+    renderShows = this.props.shows.results !== undefined ?
+     this.props.shows.results.map((key, index) => {
+       return (
+         <MovieTile key={index} {...this.props} movies={this.props.shows.results} i={index} movieType={this.props.movieType}/>
+       );
+     })
+     : [];
+    return renderShows;
   }
   render(){
     if (this.props.hasErrored) {
@@ -49,7 +63,7 @@ export default class MovieList extends Component {
       <div className="movie-listing">
         <p>{ this.props.movieType ? `Discover the latest Movies` : `Discover the latest TV Shows`}</p>
         <div className="movie-listing__blocks">
-            {this.__renderTiles()}
+            { this.props.movieType ? this.__renderTiles() : this.__renderShows() }
         </div>
       </div>
     )

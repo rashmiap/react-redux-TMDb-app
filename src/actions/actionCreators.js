@@ -1,32 +1,48 @@
+import * as types from '../constants/ActionTypes';
+
 //save and unsave favorite movie card
 export function toggleSaveCard(index){
   return{
-    type: 'TOGGLE_SAVE',
+    type: types.TOGGLE_SAVE,
+    index,
+  }
+}
+export function toggleShowCard(index){
+  return{
+    type: types.TOGGLE_SHOW_SAVE,
     index,
   }
 }
 export function fetchDataErrored(bool) {
   return {
-    type: 'FETCH_HAS_ERRORED',
+    type: types.FETCH_HAS_ERRORED,
     hasErrored: bool
   };
 }
 
 export function fetchIsLoading(bool) {
   return {
-    type: 'FETCH_IS_LOADING',
+    type: types.FETCH_IS_LOADING,
     isLoading: bool
   };
 }
 
-export function fetchDataSuccess(item) {
-  return {
-    type: 'FETCH_DATA_SUCCESS',
-    responseItem: item,
-  };
+export function fetchDataSuccess(item, movieType) {
+  if(movieType == 'movie') {
+    return {
+      type: types.FETCH_DATA_SUCCESS,
+      movies: item,
+    }
+  }
+  else{
+    return {
+      type: types.FETCH_SHOWS_SUCCESS,
+      shows: item,
+    };
+  }
 }
 
-export function fetchData(url) {
+export function fetchData(url, movieType) {
   return (dispatch) => {
     dispatch(fetchIsLoading(true));
     fetch(url)
@@ -38,13 +54,13 @@ export function fetchData(url) {
         return response;
       })
       .then((response) => response.json())
-      .then((item) => dispatch(fetchDataSuccess(item)))
+      .then((item) => dispatch(fetchDataSuccess(item, movieType)))
       .catch(() => dispatch(fetchDataErrored(true)));
   }
 }
 export function fetchDetailsSuccess(item) {
   return {
-    type: 'FETCH_DETAILS_SUCCESS',
+    type: types.FETCH_DETAILS_SUCCESS,
     fullDetails: item,
   };
 }
@@ -66,19 +82,19 @@ export function fetchDetailsData(url) {
 }
 export function fetchCastIsLoading(bool){
   return {
-    type: 'FETCH_CAST_LOADING',
+    type: types.FETCH_CAST_LOADING,
     isCastLoading: bool
   };
 }
 export function fetchCastDataErrored(bool) {
   return {
-    type: 'FETCH_CAST_ERRORED',
+    type: types.FETCH_CAST_ERRORED,
     hasCastErrored: bool
   };
 }
 export function fetchCastSuccess(item) {
   return {
-    type: 'FETCH_CAST_SUCCESS',
+    type: types.FETCH_CAST_SUCCESS,
     castDetails: item,
   };
 }
