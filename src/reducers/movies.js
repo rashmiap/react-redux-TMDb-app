@@ -1,11 +1,11 @@
 import { FETCH_DATA_SUCCESS, TOGGLE_SAVE } from '../constants/ActionTypes'
 
-export function responseItem(state = [], action){
+export function movies(state = [], action){
   switch (action.type) {
     case FETCH_DATA_SUCCESS:
       return {
-      ...action.responseItem,
-      results: action.responseItem.results.map(
+      ...action.movies,
+      results: action.movies.results.map(
         item => Object.assign({}, item, { saved: false })
       )
     }
