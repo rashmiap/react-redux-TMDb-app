@@ -1,17 +1,19 @@
 //creating root reducers
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import { responseItem } from './responseItem';
+import { movies } from './movies';
 import { isLoading } from './isLoading';
 import { hasErrored } from './hasErrored';
 import { fullDetails } from './fullDetails';
 import { castDetails } from './castDetails';
 import { isCastLoading } from './isCastLoading';
 import { hasCastErrored } from './hasCastErrored';
+import { shows } from './shows';
 
 const rootReducer = combineReducers({
   isLoading,
-  responseItem,
+  shows,
+  movies,
   hasErrored,
   fullDetails,
   castDetails,
