@@ -9,15 +9,22 @@ const showsApiUrl = 'https://api.themoviedb.org/3/discover/tv?api_key=28967d6951
 export default class MovieList extends Component {
   constructor(props){
     super(props);
-    console.log(this.props.movieType);
   }
   componentDidMount () {
-    this.props.movieType ? this.props.fetchData(movieApiUrl,'movie'):
-     this.props.fetchData(showsApiUrl,'show');
+    if(this.props.movieType == 'movies'){
+      if(Object.keys(this.props.movies).length == 0){
+        this.props.fetchData(movieApiUrl,'movie');
+      }
+    }
+    else{
+      if(Object.keys(this.props.shows).length == 0){
+        this.props.fetchData(showsApiUrl,'show');
+      }
+    }
   }
   shouldComponentUpdate(nextProps, nextState){
     if(nextProps.location.pathname != this.props.location.pathname){
-      if(nextProps.movieType){
+      if(nextProps.movieType == 'movies'){
         if(Object.keys(nextProps.movies).length == 0){
           this.props.fetchData(movieApiUrl,'movie');
         }
@@ -37,7 +44,7 @@ export default class MovieList extends Component {
     renderBlock = this.props.movies.results !== undefined ?
      this.props.movies.results.map((key, index) => {
        return (
-         <MovieTile key={index} {...this.props} movies={this.props.movies.results} i={index} movieType={this.props.movieType}/>
+         <MovieTile key={index} {...this.props} movies={this.props.movies.results} i={index} movieType={'movies'}/>
        );
      })
      : [];
@@ -48,7 +55,7 @@ export default class MovieList extends Component {
     renderShows = this.props.shows.results !== undefined ?
      this.props.shows.results.map((key, index) => {
        return (
-         <MovieTile key={index} {...this.props} movies={this.props.shows.results} i={index} movieType={this.props.movieType}/>
+         <MovieTile key={index} {...this.props} movies={this.props.shows.results} i={index} movieType={'shows'}/>
        );
      })
      : [];
@@ -69,14 +76,14 @@ export default class MovieList extends Component {
 
     return(
       <div className="movie-listing">
-        <p>{ this.props.movieType ? `Discover the latest Movies` : `Discover the latest TV Shows`}</p>
+        <p>{ this.props.movieType == 'movies' ? `Discover the latest Movies` : `Discover the latest TV Shows`}</p>
         <div className="movie-listing__blocks">
-            { this.props.movieType ? this.__renderTiles() : this.__renderShows() }
+            { this.props.movieType == 'movies' ? this.__renderTiles() : this.__renderShows() }
         </div>
       </div>
     )
   }
 }
 MovieList.propTypes = {
-  movieType: PropTypes.bool.isRequired, // movieType == true ? movies : tv shows
+  movieType: PropTypes.string.isRequired, // movieType == true ? movies : tv shows
 };
