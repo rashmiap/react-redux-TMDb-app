@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { cardDetails } from '../Styles/styles';
 
 export default class ShowsDetail extends Component {
   constructor(props){
@@ -17,11 +18,7 @@ export default class ShowsDetail extends Component {
      this.props.castDetails.cast.map((item, index) => {
        return (
         <div key={item.id} className="cast-single">
-          <div className="cast-single__header" style={{backgroundImage: `url(https://image.tmdb.org/t/p/original${item.profile_path})`,
-          backgroundSize: "cover",
-          height: '175px',
-          backgroundColor: 'black',
-          backgroundPosition: "center"}}>
+          <div className="cast-single__header" style={Object.assign({ backgroundImage:`url(https://image.tmdb.org/t/p/original${item.profile_path})`},cardDetails.castHeader)}>
             &nbsp;
           </div>
           <div className="cast-single__info">
@@ -36,21 +33,7 @@ export default class ShowsDetail extends Component {
   }
   render(){
     const postId = this.props.match.params.postId;
-    const { name, overview, release_date, vote_average, backdrop_path,poster_path } = this.props.fullDetails;
-    const headerStyles = {
-        width: "100%",
-        height: "45vh",
-        backgroundImage: `url(https://image.tmdb.org/t/p/original${backdrop_path})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-    };
-    const posterStyle = {
-        width: "100%",
-        height: "45vh",
-        backgroundImage: `url(https://image.tmdb.org/t/p/original${poster_path})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-    };
+    const { name, overview, release_date, vote_average, backdrop_path, poster_path } = this.props.fullDetails;
     if (this.props.hasErrored) {
       return <div className="movie-listing__error">
           <h3> Oops! There was an error loading the  </h3>
@@ -65,7 +48,7 @@ export default class ShowsDetail extends Component {
 
     return(
       <div className="details">
-        <div className="details-header" style={headerStyles}>
+        <div className="details-header" style={Object.assign({ backgroundImage:`url(https://image.tmdb.org/t/p/original${backdrop_path})`},cardDetails.headerStyles)}>
           &nbsp;
         </div>
         <div className="details-body">
@@ -77,7 +60,7 @@ export default class ShowsDetail extends Component {
             <p>Release date: {release_date}</p>
           </div>
           <div className="details-cast">
-            <p style={{width: '100%'}}>Full Cast</p>
+            <p style={cardDetails.castText}>Full Cast</p>
             {this.__renderCast()}
           </div>
         </div>
