@@ -17,8 +17,16 @@ export default class MovieList extends Component {
   }
   shouldComponentUpdate(nextProps, nextState){
     if(nextProps.location.pathname != this.props.location.pathname){
-      nextProps.movieType ? this.props.fetchData(movieApiUrl,'movie'):
-      this.props.fetchData(showsApiUrl,'show')
+      if(nextProps.movieType){
+        if(Object.keys(nextProps.movies).length == 0){
+          this.props.fetchData(movieApiUrl,'movie');
+        }
+      }
+      else{
+        if(Object.keys(nextProps.shows).length == 0){
+          this.props.fetchData(showsApiUrl,'show');
+        }
+      }
       return true;
     }
     return true;
