@@ -9,7 +9,7 @@ export function toggleSaveCard(index){
 }
 export function toggleShowCard(index){
   return{
-    type: 'TOGGLE_SHOW_SAVE',
+    type: types.TOGGLE_SHOW_SAVE,
     index,
   }
 }
@@ -36,7 +36,7 @@ export function fetchDataSuccess(item, movieType) {
   }
   else{
     return {
-      type: 'FETCH_SHOWS_SUCCESS',
+      type: types.FETCH_SHOWS_SUCCESS,
       shows: item,
     };
   }
