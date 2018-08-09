@@ -7,6 +7,12 @@ export function toggleSaveCard(index){
     index,
   }
 }
+export function toggleShowCard(index){
+  return{
+    type: 'TOGGLE_SHOW_SAVE',
+    index,
+  }
+}
 export function fetchDataErrored(bool) {
   return {
     type: types.FETCH_HAS_ERRORED,
@@ -21,14 +27,22 @@ export function fetchIsLoading(bool) {
   };
 }
 
-export function fetchDataSuccess(item) {
-  return {
-    type: types.FETCH_DATA_SUCCESS,
-    responseItem: item,
-  };
+export function fetchDataSuccess(item, movieType) {
+  if(movieType == 'movie') {
+    return {
+      type: types.FETCH_DATA_SUCCESS,
+      movies: item,
+    }
+  }
+  else{
+    return {
+      type: 'FETCH_SHOWS_SUCCESS',
+      shows: item,
+    };
+  }
 }
 
-export function fetchData(url) {
+export function fetchData(url, movieType) {
   return (dispatch) => {
     dispatch(fetchIsLoading(true));
     fetch(url)
@@ -40,7 +54,7 @@ export function fetchData(url) {
         return response;
       })
       .then((response) => response.json())
-      .then((item) => dispatch(fetchDataSuccess(item)))
+      .then((item) => dispatch(fetchDataSuccess(item, movieType)))
       .catch(() => dispatch(fetchDataErrored(true)));
   }
 }
