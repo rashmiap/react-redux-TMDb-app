@@ -36,4 +36,25 @@ export const cardTileStyles = {
     display: '-webkit-box',
     WebkitLineClamp: 3,
   },
+  saveIcon: {
+    color: '#f92727ab',
+  }
+};
+
+export const cardDetails = {
+  headerStyles: {
+      width: "100%",
+      height: "55vh",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+  },
+  castHeader: {
+    backgroundSize: "cover",
+    height: '175px',
+    backgroundColor: 'black',
+    backgroundPosition: "center"
+  },
+  castText: {
+    width: '100%',
+  }
 }
