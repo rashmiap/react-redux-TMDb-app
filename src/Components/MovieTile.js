@@ -28,7 +28,7 @@ const MovieTile = (props) => {
           </Typography>
         </CardContent>
           {
-            movieType ?
+            movieType == 'movies' ?
             <CardActions className={classes.actions}>
               <Button component={Link} to={`/view/${movies[i].id}`} className={classes.linker} color="primary">
                 See More
@@ -49,7 +49,7 @@ const MovieTile = (props) => {
             :
             <CardActions className={classes.actions}>
               <Button component={Link} to={`/show/${movies[i].id}`} className={classes.linker} color="primary">
-                See More
+                See More 
               </Button>
                 {props.movies[i].saved ?
                 <Button aria-label="Saved" className={classes.button} onClick={props.toggleShowCard.bind(null,i)}>
