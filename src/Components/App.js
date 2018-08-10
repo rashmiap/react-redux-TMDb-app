@@ -9,11 +9,12 @@ const mapStateToProps = (state) => {
     movies: state.movies,
     hasErrored: state.hasErrored,
     isLoading: state.isLoading,
-    fullDetails: state.fullDetails,
     isCastLoading: state.isCastLoading,
     hasCastErrored: state.hasCastErrored,
     castDetails: state.castDetails,
     shows: state.shows,
+    currentMovie: state.currentMovie,
+    currentShow: state.currentShow,
   };
 };
 const mapDispatchToProps = (dispatch) => {
