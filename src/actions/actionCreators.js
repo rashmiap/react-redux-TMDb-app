@@ -58,28 +58,6 @@ export function fetchData(url, movieType) {
       .catch(() => dispatch(fetchDataErrored(true)));
   }
 }
-export function fetchDetailsSuccess(item) {
-  return {
-    type: types.FETCH_DETAILS_SUCCESS,
-    fullDetails: item,
-  };
-}
-export function fetchDetailsData(url) {
-  return (dispatch) => {
-    dispatch(fetchIsLoading(true));
-    fetch(url)
-      .then((response) => {
-        if(!response.ok) {
-          throw Error(response.statusText);
-        }
-        dispatch(fetchIsLoading(false));
-        return response;
-      })
-      .then((response) => response.json())
-      .then((item) => dispatch(fetchDetailsSuccess(item)))
-      .catch(() => dispatch(fetchDataErrored(true)));
-  }
-}
 export function fetchCastIsLoading(bool){
   return {
     type: types.FETCH_CAST_LOADING,
@@ -112,5 +90,19 @@ export function fetchCastData(url){
       .then((response) => response.json())
       .then((item) => dispatch(fetchCastSuccess(item)))
       .catch(() => dispatch(fetchCastDataErrored(true)));
+  }
+}
+export function fetchCurrentMovie(movieId, movies){
+  return {
+    type: types.FETCH_CURRENT_MOVIE,
+    movieId,
+    movies: movies.results,
+  }
+}
+export function fetchCurrentShow(movieId, shows){
+  return {
+    type: types.FETCH_CURRENT_SHOW,
+    movieId,
+    shows: shows.results,
   }
 }
