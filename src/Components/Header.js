@@ -8,9 +8,6 @@ import { headerStyles } from '../Styles/styles';
 import logo from '../Assets/tmdb_logo.svg';
 
 class Header extends Component{
-  constructor(props){
-    super(props);
-  }
   render(){
     const { classes } = this.props;
     return(
@@ -18,7 +15,7 @@ class Header extends Component{
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <Link to="/">
-              <img src={logo} className={classes.logo}/>
+              <img src={logo} className={classes.logo} alt='main logo'/>
             </Link>
           </Toolbar>
         </AppBar>

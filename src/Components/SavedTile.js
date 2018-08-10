@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import MovieTile from './MovieTile';
 
 export default class SavedTile extends Component {
