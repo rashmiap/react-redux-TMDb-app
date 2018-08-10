@@ -58,28 +58,6 @@ export function fetchData(url, movieType) {
       .catch(() => dispatch(fetchDataErrored(true)));
   }
 }
-export function fetchDetailsSuccess(item) {
-  return {
-    type: types.FETCH_DETAILS_SUCCESS,
-    fullDetails: item,
-  };
-}
-export function fetchDetailsData(url) {
-  return (dispatch) => {
-    dispatch(fetchIsLoading(true));
-    fetch(url)
-      .then((response) => {
-        if(!response.ok) {
-          throw Error(response.statusText);
-        }
-        dispatch(fetchIsLoading(false));
-        return response;
-      })
-      .then((response) => response.json())
-      .then((item) => dispatch(fetchDetailsSuccess(item)))
-      .catch(() => dispatch(fetchDataErrored(true)));
-  }
-}
 export function fetchCastIsLoading(bool){
   return {
     type: types.FETCH_CAST_LOADING,
