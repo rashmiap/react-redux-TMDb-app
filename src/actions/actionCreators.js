@@ -92,3 +92,17 @@ export function fetchCastData(url){
       .catch(() => dispatch(fetchCastDataErrored(true)));
   }
 }
+export function fetchCurrentMovie(movieId, movies){
+  return {
+    type: types.FETCH_CURRENT_MOVIE,
+    movieId,
+    movies: movies.results,
+  }
+}
+export function fetchCurrentShow(movieId, shows){
+  return {
+    type: types.FETCH_CURRENT_SHOW,
+    movieId,
+    shows: shows.results,
+  }
+}
