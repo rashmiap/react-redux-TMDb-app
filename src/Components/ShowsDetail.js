@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import { cardDetails } from '../Styles/styles';
 
 export default class ShowsDetail extends Component {
-  constructor(props){
-    super(props);
-  }
   componentDidMount(){
     const movieId = this.props.match.params.postId;
     this.props.fetchCurrentShow(movieId, this.props.shows);

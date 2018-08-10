@@ -9,15 +9,15 @@ const Navigation = (props) => {
   return(
     <nav className="Nav">
       <NavLink activeClassName="Nav-active" exact to="/">
-        <img src={movieNav} width={35} style={{marginRight: '10px'}}/>
+        <img src={movieNav} width={35} style={{marginRight: '10px'}} alt='movie logo'/>
         Latest Movies
       </NavLink>
       <NavLink activeClassName="Nav-active" to="/shows">
-        <img src={showNav} width={35} style={{marginRight: '20px'}}/>
+        <img src={showNav} width={35} style={{marginRight: '20px'}} alt='shows logo'/>
         TV Shows
       </NavLink>
       <NavLink activeClassName="Nav-active" to="/saved">
-        <img src={savedNav} width={35} style={{marginRight: '8px'}}/>
+        <img src={savedNav} width={35} style={{marginRight: '8px'}} alt='saved logo'/>
         Saved Cards
       </NavLink>
     </nav>
