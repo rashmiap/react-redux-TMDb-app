@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { cardDetails } from '../Styles/styles';
+import { cardDetails, detailsStyles } from '../Styles/styles';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 
 export default class ShowsDetail extends Component {
   componentDidMount(){
@@ -38,7 +40,23 @@ export default class ShowsDetail extends Component {
             </div>
             <div className="details-body">
               <div className="details-content">
+              <div className="details-saver">
                 <h2>{this.props.currentShow[0].name}</h2>
+                {
+                  this.props.currentShow[0].saved ?
+                  <Button aria-label="Saved" size={'large'} onClick={this.props.toggleShowCard.bind(null,this.props.currentShow[0].id)}>
+                    <Icon style={detailsStyles.saveIcon}>
+                        favorite
+                    </Icon>
+                  </Button>
+                  :
+                  <Button aria-label="Save" size={'large'} onClick={this.props.toggleShowCard.bind(null,this.props.currentShow[0].id)}>
+                    <Icon style={detailsStyles.saveIcon}>
+                        favorite_border
+                    </Icon>
+                  </Button>
+                }
+              </div>
                 <div>
                   <p><strong>Overview :</strong> {this.props.currentShow[0].overview}</p>
                 </div>

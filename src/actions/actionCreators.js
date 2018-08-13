@@ -1,16 +1,16 @@
 import * as types from '../constants/ActionTypes';
 
 //save and unsave favorite movie card
-export function toggleSaveCard(index){
+export function toggleSaveCard(cardId){
   return{
     type: types.TOGGLE_SAVE,
-    index,
+    cardId
   }
 }
-export function toggleShowCard(index){
+export function toggleShowCard(cardId){
   return{
     type: types.TOGGLE_SHOW_SAVE,
-    index,
+    cardId,
   }
 }
 export function fetchDataErrored(bool) {

@@ -13,10 +13,11 @@ export function movies(state = [], action){
     return {
       ...state,
       results: state.results.map(
-           (content, i) => i === action.index ? {...content, saved: !content.saved}
+           (content) => content.id === action.cardId ? {...content, saved: !content.saved}
                                    : content
        )
     };
+
   default:
     return state;
   }
