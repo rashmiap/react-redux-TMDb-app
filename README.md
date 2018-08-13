@@ -1,48 +1,18 @@
-# reactJS-redux-TMDb-app
+[**ReactJS-Redux-TMDb-app**]
 
 Made with :heart: in React
+-
+(https://github.com/rashmiap/react-redux-TMDb-app)
+This is a movies and TV shows app built using ReactJS and utilizes [Redux](https://redux.js.org/) for state management. [The Movie Database (TMDb) API](https://www.themoviedb.org/documentation/api) is used to fetch data. You can navigate between the latest movies and the latest TV shows. Can view full details including cast members of each movie/TV show by clicking on 'See More' button. Can locally save and unsave any movie/TV show which can be viewed under 'Saved Cards' tab.
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-### Get Started Immediately
-You **don’t** need to install or configure tools like Webpack or Babel.<br>
-They are preconfigured and hidden so that you can focus on the code.
+Demo
+-
+The app can be seen in action [here](http://redux-tmdb-app.surge.sh/).
 
-### Project Structure
-```
-my-app
-├── README.md
-├── node_modules
-├── package.json
-├── .gitignore
-├── public
-│   └── favicon.ico
-│   └── index.html
-│   └── manifest.json
-└── src
-    └── App
-```
-
-No configuration or complicated folder structures, just the files you need to build your app.<br>
-Once the installation is done, you can open your project folder:
-
-### `npm start` or `yarn start`
-
-Runs the app in development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will automatically reload if you make changes to the code.<br>
-You will see the build errors and lint warnings in the console.
-
-### `npm test` or `yarn test`
-
-Runs the test watcher in an interactive mode.<br>
-By default, runs tests related to files changed since the last commit.
-
-### `npm run build` or `yarn build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-The build is minified and the filenames include the hashes.<br>
-By default
-
-Your app is ready to be deployed.
-=======
+**Run Locally**
+-
+ 1.  Clone this repository and go into its src folder.
+ 2.  Run  `npm install`
+ 3.  Run  `npm start`
+ 4.  Go to  `http://localhost:3000`  to view the app
