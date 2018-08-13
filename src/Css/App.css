@@ -26,6 +26,15 @@
 .Nav a:hover{
   background-color: rgba(0, 0, 0, 0.08);
 }
+.Nav-movies{
+  margin: 0 0 0 10px;
+}
+.Nav-shows{
+  margin: 0 0 0 20px;
+}
+.Nav-saved{
+  margin: 0 0 0 8px;
+}
 .Movie-content{
   flex:1;
   padding: 20px;
@@ -101,4 +110,28 @@
 }
 .movie-listing .no-saved{
   margin: 0;
+}
+@media (max-width: 480px) and (min-width: 320px){
+  .Nav{
+    width: 100px;
+  }
+  .Nav-text{
+    display: none;
+  }
+  .Main-content{
+    margin-left: 100px;
+  }
+  .details-body{
+    margin: 0;
+    padding: 10px;
+  }
+  .details-saver{
+    flex-direction: column;
+  }
+  .details-cast{
+    justify-content: center;
+  }
+  .movie-listing__blocks >div{
+    margin-right: 0;
+  }
 }
