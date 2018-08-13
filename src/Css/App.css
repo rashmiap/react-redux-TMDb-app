@@ -67,6 +67,11 @@
   max-width: 90%;
   margin: 30px auto;
 }
+.details-saver{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .cast-single{
   width: 170px;
   background-color: #fff;

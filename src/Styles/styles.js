@@ -38,7 +38,13 @@ export const cardTileStyles = {
   },
   saveIcon: {
     color: '#f92727ab',
-  }
+  },
+};
+export const detailsStyles = {
+  saveIcon: {
+    color: '#f92727ab',
+    fontSize: '45px',
+  },
 };
 
 export const cardDetails = {
