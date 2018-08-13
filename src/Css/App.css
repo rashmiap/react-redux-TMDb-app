@@ -29,6 +29,7 @@
 .Movie-content{
   flex:1;
   padding: 20px;
+  min-height: 84vh;
   border-left: 1px solid rgba(0, 0, 0, 0.12);
 }
 .movie-listing__blocks{
@@ -92,5 +93,12 @@
   margin: 5px auto;
 }
 .cast-single__info .name{
+  margin: 0;
+}
+.movie-listing__header{
+  border-top: 1px solid #ccc;
+  padding-top: 40px;
+}
+.movie-listing .no-saved{
   margin: 0;
 }
