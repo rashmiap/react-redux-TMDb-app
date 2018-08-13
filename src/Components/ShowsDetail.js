@@ -68,7 +68,7 @@ export default class ShowsDetail extends Component {
               {this.__renderCast()}
             </div>
           </div>
-          : <p>wait for it</p>
+          : <p>Wait for it</p>
         }
       </div>
     )
