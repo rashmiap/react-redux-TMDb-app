@@ -11,6 +11,7 @@ export default class MovieList extends Component {
     super(props);
   }
   componentDidMount () {
+    window.scrollTo(0,0);
     if(this.props.movieType == 'movies'){
       if(Object.keys(this.props.movies).length == 0){
         this.props.fetchData(movieApiUrl,'movie');

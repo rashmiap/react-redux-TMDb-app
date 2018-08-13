@@ -10,6 +10,7 @@ export default class MovieDetail extends Component {
     super(props);
   }
   componentDidMount(){
+    window.scrollTo(0,0);
     const movieId = this.props.match.params.postId;
     this.props.fetchCurrentMovie(movieId, this.props.movies);
     this.props.fetchCastData(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=28967d69513d49d94603253876b995a8`);

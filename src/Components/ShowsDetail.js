@@ -6,10 +6,12 @@ import Icon from '@material-ui/core/Icon';
 
 export default class ShowsDetail extends Component {
   componentDidMount(){
+    window.scrollTo(0,0);
     const movieId = this.props.match.params.postId;
     this.props.fetchCurrentShow(movieId, this.props.shows);
     this.props.fetchCastData(`https://api.themoviedb.org/3/tv/${movieId}/credits?api_key=28967d69513d49d94603253876b995a8&language=en-US`);
   }
+
   __renderCast(){
     let renderCastBlock = [];
     renderCastBlock = this.props.castDetails.cast !== undefined ?
