@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { cardDetails } from '../Styles/styles';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+import { detailsStyles } from '../Styles/styles';
 
 export default class MovieDetail extends Component {
   constructor(props){
@@ -42,7 +45,23 @@ export default class MovieDetail extends Component {
             </div>
             <div className="details-body">
               <div className="details-content">
-                <h2>{this.props.currentMovie[0].title}</h2>
+                <div className="details-saver">
+                  <h2>{this.props.currentMovie[0].title}</h2>
+                  {
+                    this.props.currentMovie[0].saved ?
+                    <Button aria-label="Saved" size={'large'} onClick={this.props.toggleSaveCard.bind(null,this.props.currentMovie[0].id)}>
+                      <Icon style={detailsStyles.saveIcon}>
+                          favorite
+                      </Icon>
+                    </Button>
+                    :
+                    <Button aria-label="Save" size={'large'} onClick={this.props.toggleSaveCard.bind(null,this.props.currentMovie[0].id)}>
+                      <Icon style={detailsStyles.saveIcon}>
+                          favorite_border
+                      </Icon>
+                    </Button>
+                  }
+                </div>
                 <div>
                   <p><strong>Overview :</strong> {this.props.currentMovie[0].overview}</p>
                 </div>
