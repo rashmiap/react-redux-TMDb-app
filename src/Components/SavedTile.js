@@ -7,38 +7,35 @@ export default class SavedTile extends Component {
   }
   __renderMovies(){
     let renderBlock = [];
-    renderBlock = this.props.movies.results !== undefined ?
-     this.props.movies.results.map((key, index) => {
+    this.props.movies.results !== undefined ?
+     this.props.movies.results.filter((key, index) => {
        if(key.saved){
-         return (
-           <MovieTile key={index} {...this.props} movies={this.props.movies.results} i={index} movieType={'movies'}/>
-         );
+         renderBlock.push(<MovieTile key={index} {...this.props} movies={this.props.movies.results} i={index} movieType={'movies'}/>)
        }
+       return renderBlock;
      })
      : [];
-    return renderBlock;
+    return renderBlock.length > 0 ? renderBlock : <p className="no-saved">Looks like there no saved movies</p>;
   }
   __renderShows(){
     let renderShows = [];
-    renderShows = this.props.shows.results !== undefined ?
-     this.props.shows.results.map((key, index) => {
-       if(key.saved){
-         return (
-           <MovieTile key={index} {...this.props} movies={this.props.shows.results} i={index} movieType={'shows'}/>
-         );
-       }
-     })
-     : [];
-    return renderShows;
+    this.props.shows.results !== undefined ?
+    this.props.shows.results.filter((key, index) => {
+      if(key.saved){
+        renderShows.push(<MovieTile key={index} {...this.props} movies={this.props.shows.results} i={index} movieType={'shows'}/>)
+      }
+      return renderShows;
+    }): [];
+    return renderShows.length > 0 ? renderShows : <p className="no-saved">Looks like there no saved shows</p>;
   }
   render(){
     return(
       <div className="movie-listing">
-        <p>Saved Movies</p>
+        <h3>Saved Movies</h3>
         <div className="movie-listing__blocks">
             { this.__renderMovies() }
         </div>
-        <p>Saved Shows</p>
+        <h3 className="movie-listing__header">Saved Shows</h3>
         <div className="movie-listing__blocks">
             { this.__renderShows() }
         </div>
