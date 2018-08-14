@@ -5,6 +5,9 @@ export default class SavedTile extends Component {
   constructor(props){
     super(props);
   }
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
   __renderMovies(){
     let renderBlock = [];
     this.props.movies.results !== undefined ?
