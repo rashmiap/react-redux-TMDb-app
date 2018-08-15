@@ -7,11 +7,9 @@ import { detailsStyles } from '../Styles/styles';
 import voteAvg from '../Assets/vote-count.svg';
 import releaseDate from '../Assets/release-date.svg';
 import voteCount from '../Assets/vote-avg.svg';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default class MovieDetail extends Component {
-  constructor(props){
-    super(props);
-  }
   componentDidMount(){
     window.scrollTo(0,0);
     const movieId = this.props.match.params.postId;
@@ -39,6 +37,17 @@ export default class MovieDetail extends Component {
     return renderCastBlock;
   }
   render(){
+    if (this.props.hasErrored) {
+      return <div className="movie-listing__error">
+          <h3> Oops! There was an error loading the items </h3>
+      </div>
+    }
+
+    if (this.props.isLoading) {
+      return <div className="movie-listing__error">
+            <CircularProgress size={150} thickness={2}/>
+      </div>;
+    }
     return(
       <div className="details">
         {
