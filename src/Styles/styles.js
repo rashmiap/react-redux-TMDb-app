@@ -53,6 +53,7 @@ export const cardDetails = {
       height: "55vh",
       backgroundSize: "cover",
       backgroundPosition: "center",
+      backgroundColor: 'black',
   },
   castHeader: {
     backgroundSize: "cover",

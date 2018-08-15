@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { cardDetails, detailsStyles } from '../Styles/styles';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
+import voteAvg from '../Assets/vote-count.svg';
+import releaseDate from '../Assets/release-date.svg';
+import voteCount from '../Assets/vote-avg.svg';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default class ShowsDetail extends Component {
   componentDidMount(){
@@ -32,6 +36,17 @@ export default class ShowsDetail extends Component {
     return renderCastBlock;
   }
   render(){
+    if (this.props.hasErrored) {
+      return <div className="movie-listing__error">
+          <h3> Oops! There was an error loading the items </h3>
+      </div>
+    }
+
+    if (this.props.isLoading) {
+      return <div className="movie-listing__error">
+            <CircularProgress size={150} thickness={2}/>
+      </div>;
+    }
     return(
       <div className="details">
         {
@@ -62,7 +77,18 @@ export default class ShowsDetail extends Component {
                 <div>
                   <p><strong>Overview :</strong> {this.props.currentShow[0].overview}</p>
                 </div>
-                <p>Release date: {this.props.currentShow[0].release_date}</p>
+                <div className="details-additional">
+                  <img src={voteAvg} alt="vote average" />
+                  <p>Vote average: {this.props.currentShow[0].vote_average} / 10</p>
+                </div>
+                <div className="details-additional">
+                  <img src={voteCount} alt="vote count" />
+                  <p>Vote count: {this.props.currentShow[0].vote_count}</p>
+                </div>
+                <div className="details-additional">
+                  <img src={releaseDate} alt="first air date" />
+                  <p>First air date: {this.props.currentShow[0].first_air_date}</p>
+                </div>
               </div>
             </div>
             <div className="details-cast">
