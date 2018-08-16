@@ -3,11 +3,11 @@
 
 Made with :heart: in React
 -
-This is a responsive movies and TV shows app built using ReactJS and utilizes [Redux](https://redux.js.org/) for state management.
-[The Movie Database (TMDb) API](https://www.themoviedb.org/documentation/api) is used to fetch data. 
-You can navigate between the latest movies and the latest TV shows.
-Can view full details including cast members of each movie/TV show by clicking on 'See More' button.
-Can locally save :heart: and unsave :broken_heart: any movie/TV show which can be viewed under 'Saved Cards' tab.
+This is a responsive movies and TV shows app built using ReactJS and utilizes [Redux](https://redux.js.org/) for state management.<br />
+[The Movie Database (TMDb) API](https://www.themoviedb.org/documentation/api) is used to fetch data. <br />
+You can navigate between the latest movies and the latest TV shows.<br />
+Can view full details including cast members of each movie/TV show by clicking on 'See More' button.<br />
+Can locally save :heart: and unsave :broken_heart: any movie/TV show which can be viewed under 'Saved Cards' tab.<br />
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Demo
