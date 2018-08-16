@@ -62,13 +62,13 @@ export default class MovieDetail extends Component {
                   <h2>{this.props.currentMovie[0].title}</h2>
                   {
                     this.props.currentMovie[0].saved ?
-                    <Button aria-label="Saved" size={'large'} onClick={this.props.toggleSaveCard.bind(null,this.props.currentMovie[0].id)}>
+                    <Button aria-label="Saved" size={'large'} onClick={this.props.toggleDetailSaveCard.bind(null,this.props.currentMovie[0].id)}>
                       <Icon style={detailsStyles.saveIcon}>
                           favorite
                       </Icon>
                     </Button>
                     :
-                    <Button aria-label="Save" size={'large'} onClick={this.props.toggleSaveCard.bind(null,this.props.currentMovie[0].id)}>
+                    <Button aria-label="Save" size={'large'} onClick={this.props.toggleDetailSaveCard.bind(null,this.props.currentMovie[0].id)}>
                       <Icon style={detailsStyles.saveIcon}>
                           favorite_border
                       </Icon>

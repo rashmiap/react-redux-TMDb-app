@@ -1,4 +1,4 @@
-import { FETCH_CURRENT_SHOW, TOGGLE_SHOW_SAVE } from '../constants/ActionTypes'
+import { FETCH_CURRENT_SHOW, TOGGLE_DETAIL_SHOW } from '../constants/ActionTypes'
 
 export function currentShow(state = [], action){
   switch (action.type) {
@@ -6,7 +6,7 @@ export function currentShow(state = [], action){
     case FETCH_CURRENT_SHOW:
       return action.shows.filter(item => item.id == action.movieId);
 
-    case TOGGLE_SHOW_SAVE:
+    case TOGGLE_DETAIL_SHOW:
         const newState = [...state] // clone the array
         if(newState.length > 0){
           newState[0].saved = !newState[0].saved
@@ -15,7 +15,7 @@ export function currentShow(state = [], action){
         else{
           return state;
         }
-        
+
   default:
     return state;
   }

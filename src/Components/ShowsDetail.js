@@ -61,13 +61,13 @@ export default class ShowsDetail extends Component {
                 <h2>{this.props.currentShow[0].name}</h2>
                 {
                   this.props.currentShow[0].saved ?
-                  <Button aria-label="Saved" size={'large'} onClick={this.props.toggleShowCard.bind(null,this.props.currentShow[0].id)}>
+                  <Button aria-label="Saved" size={'large'} onClick={this.props.toggleDetailShowCard.bind(null,this.props.currentShow[0].id)}>
                     <Icon style={detailsStyles.saveIcon}>
                         favorite
                     </Icon>
                   </Button>
                   :
-                  <Button aria-label="Save" size={'large'} onClick={this.props.toggleShowCard.bind(null,this.props.currentShow[0].id)}>
+                  <Button aria-label="Save" size={'large'} onClick={this.props.toggleDetailShowCard.bind(null,this.props.currentShow[0].id)}>
                     <Icon style={detailsStyles.saveIcon}>
                         favorite_border
                     </Icon>
