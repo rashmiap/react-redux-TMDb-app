@@ -7,10 +7,22 @@ export function toggleSaveCard(cardId){
     cardId
   }
 }
+export function toggleDetailSaveCard(cardId){
+  return{
+    type: types.TOGGLE_DETAIL_SAVE,
+    cardId
+  }
+}
 //save and unsave favorite show card
 export function toggleShowCard(cardId){
   return{
     type: types.TOGGLE_SHOW_SAVE,
+    cardId,
+  }
+}
+export function toggleDetailShowCard(cardId){
+  return{
+    type: types.TOGGLE_DETAIL_SHOW,
     cardId,
   }
 }
