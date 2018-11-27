@@ -14,7 +14,8 @@
     "react-router-native": "^4.3.0",
     "react-router-redux": "^4.0.8",
     "react-scripts": "^2.1.1",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,5 +25,11 @@
   },
   "devDependencies": {
     "redux-devtools": "^3.4.1"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
